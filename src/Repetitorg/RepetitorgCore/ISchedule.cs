@@ -21,6 +21,7 @@ namespace RepetitorgCore
         void CancelTask(long id);
         void PostponeTask(long newTaskId, DateTime dateTime);
         void ResumeTask(long id);
+        void RemoveTask(long id);
         void LinkTasks(long parentId, long childId);
 
         void AddLesson(
@@ -36,5 +37,6 @@ namespace RepetitorgCore
         void CancelLesson(long id);
         void PostponeLesson(long newTaskId, DateTime dateTime);
         void ResumeLesson(long id);
+        void RemoveLesson(long id);
     }
 }

@@ -67,6 +67,16 @@ namespace RepetitorgCore
             throw new NotImplementedException();
         }
 
+        public void RemoveLesson(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveTask(long id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void ResumeLesson(long id)
         {
             throw new NotImplementedException();
