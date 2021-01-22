@@ -4,10 +4,8 @@ using System.Text;
 
 namespace RepetitorgCore
 {
-    public interface ILesson : IScheduleUnit
+    public enum PaymentDocumentType
     {
-        IOrder Order { get; }
-
-        long Length { get; }
+        PaymentOrder
     }
 }

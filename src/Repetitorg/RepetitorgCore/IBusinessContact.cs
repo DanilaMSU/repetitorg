@@ -6,6 +6,8 @@ namespace RepetitorgCore
 {
     public interface IBusinessContact
     {
+        long Id { get; }
+
         string FirstName  { get; }
         string SurName    { get; }
         string Patronymic { get; }

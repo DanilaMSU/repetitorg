@@ -6,5 +6,13 @@ namespace RepetitorgCore
 {
     public interface IPayment
     {
+        long Id { get; }
+
+        long Amount { get; }
+
+        PaymentDocumentType DocumentType { get; }
+        string              DocumentId   { get; }
+
+        IClient Client { get; }
     }
 }
