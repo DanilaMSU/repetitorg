@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RepetitorgCore
 {
-    public enum ScheduleUnitStatus
+    public enum LessonStatus
     {
         InProgress,
         Complete,

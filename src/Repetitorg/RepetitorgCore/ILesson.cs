@@ -4,10 +4,14 @@ using System.Text;
 
 namespace RepetitorgCore
 {
-    public interface ILesson : IScheduleUnit
+    public interface ILesson
     {
-        IOrder Order { get; }
-
-        long Length { get; }
+        long         Id              { get; }
+        string       Notes           { get; }
+        DateTime     DateTime        { get; }
+        LessonStatus Status          { get; }
+        ILesson      PostponedLesson { get; }
+        IOrder       Order           { get; }
+        long         Length          { get; }
     }
 }
