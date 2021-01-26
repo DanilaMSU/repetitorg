@@ -8,7 +8,8 @@ namespace RepetitorgCore
     {
         long Id { get; }
 
-        long Amount { get; }
+        DateTime DateTime { get; }
+        long Amount       { get; }
 
         PaymentDocumentType DocumentType { get; }
         string              DocumentId   { get; }

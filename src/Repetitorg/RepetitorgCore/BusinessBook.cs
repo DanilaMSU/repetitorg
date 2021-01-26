@@ -14,6 +14,14 @@ namespace RepetitorgCore
 
         public IEnumerable<IPayment> Payments => throw new NotImplementedException();
 
+        public int OrdersCount => throw new NotImplementedException();
+
+        public int ClientsCount => throw new NotImplementedException();
+
+        public int StudentsCount => throw new NotImplementedException();
+
+        public int PaymentsCount => throw new NotImplementedException();
+
         public void AddClient(long id, string firstName, string surName, string patronymic, DateTime registrationDateTime)
         {
             throw new NotImplementedException();
@@ -49,6 +57,11 @@ namespace RepetitorgCore
             throw new NotImplementedException();
         }
 
+        public long GetCostFor(long orderId, long studentId)
+        {
+            throw new NotImplementedException();
+        }
+
         public IOrder GetOrder(long id)
         {
             throw new NotImplementedException();
@@ -60,6 +73,26 @@ namespace RepetitorgCore
         }
 
         public IStudent GetStudent(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveClient(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveOrder(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemovePayment(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveStudent(long id)
         {
             throw new NotImplementedException();
         }

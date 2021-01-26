@@ -8,6 +8,8 @@ namespace RepetitorgCore
     {
         IEnumerable<IStudent> Students { get; }
         IEnumerable<IPayment> Payments { get; }
+        int StudentsCount { get; }
+        int PaymentsCount { get; }
 
         long Balance { get; }
     }

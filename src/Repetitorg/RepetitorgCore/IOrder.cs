@@ -16,7 +16,6 @@ namespace RepetitorgCore
         long StandartLength { get; }
 
         IEnumerable<IStudent> Students { get; }
-
-        long GetCostFor(IStudent student);
+        int StudentsCount { get; }
     }
 }

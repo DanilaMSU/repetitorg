@@ -27,6 +27,16 @@ namespace RepetitorgCoreTest
                 );
             }
         }
+
+        [TestMethod]
+        public void AddLessonNegTime()
+        {
+            var s = GetSchedule();
+            Assert.ThrowsException<ArgumentException>(
+                () => s.AddLesson(IDS[0], DATE_TIMES[0], -LENGTHES[0], IDS[0])
+            );
+        }
+
         [TestMethod]
         public void AddWithIntersect()
         {
@@ -59,7 +69,12 @@ namespace RepetitorgCoreTest
         [TestMethod]
         public void CompleteLesson()
         {
-            var s = GetSchedule();
+            CoreFacade co = new CoreFacade();
+            co.CreateEnvironment(ENVIRONMENT_NAME);
+            BuildBusinessBook(co.GetBusinessBook(ENVIRONMENT_NAME));
+            var s = co.GetSchedule(ENVIRONMENT_NAME);
+            var bb = co.GetBusinessBook(ENVIRONMENT_NAME);
+
             s.AddLesson(IDS[0], DATE_TIMES[0], LENGTHES[0], IDS[0]);
             var lesson = s.GetLesson(IDS[0]);
             List<long> balances = new List<long>();
@@ -71,7 +86,7 @@ namespace RepetitorgCoreTest
             int i = 0;
             foreach (var student in lesson.Order.Students)
             {
-                var cost = lesson.Order.GetCostFor(student);
+                var cost = bb.GetCostFor(lesson.Order.Id, student.Id);
                 Assert.AreEqual(balances[i] - cost * lesson.Length / lesson.Order.StandartLength, student.Client.Balance);
                 ++i;
             }

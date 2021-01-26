@@ -10,6 +10,10 @@ namespace RepetitorgCore
         IEnumerable<IClient>  Clients  { get; }
         IEnumerable<IStudent> Students { get; }
         IEnumerable<IPayment> Payments { get; }
+        int OrdersCount   { get; }
+        int ClientsCount  { get; }
+        int StudentsCount { get; }
+        int PaymentsCount { get; }
 
         void AddOrder(
             long id,
@@ -28,6 +32,8 @@ namespace RepetitorgCore
              long orderId,
              long studentId
         );
+        long GetCostFor(long orderId, long studentId);
+        void RemoveOrder(long id);
 
         void AddClient(
             long id,
@@ -37,6 +43,7 @@ namespace RepetitorgCore
             DateTime registrationDateTime
         );
         IClient GetClient(long id);
+        void RemoveClient(long id);
 
         void AddStudent(
             long id,
@@ -47,6 +54,7 @@ namespace RepetitorgCore
             long clientId
         );
         IStudent GetStudent(long id);
+        void RemoveStudent(long id);
 
         void AddPayment(
             long id,
@@ -56,5 +64,6 @@ namespace RepetitorgCore
             long clientId
         );
         IPayment GetPayment(long id);
+        void RemovePayment(long id);
     }
 }
